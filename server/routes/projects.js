@@ -1,10 +1,16 @@
 (function() {
+  var mongo = require('../db');
   module.exports = function(app) {
 
 
  
     return app.get('/projects', function(req, res) {
-      return res.send('stest13afdsa');
+	  mongo.db.collection("projects").find().toArray(function(err, projects){
+		if(err){
+			throw err;
+		}
+		res.json(projects);
+	  })
     });
   };
 
