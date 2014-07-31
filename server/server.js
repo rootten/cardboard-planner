@@ -1,7 +1,8 @@
 (function() {
-  var app, communicator, device, express, io, path, runningPortNumber, server, winston;
-
+  var app, communicator, device, express, io, path, runningPortNumber, server, winston, settings;
+  settings = require("./settings");
   express = require("express");
+  var mongo = require("./db");
 
   app = express();
 
@@ -30,8 +31,12 @@
   require('./routes')(app);
 
 
-
-
-  server.listen(9000);
+  mongo.init(function (error) {
+    if (error)
+        throw error;
+    server.listen(settings.Port, function () {
+        console.log('Server running at http://127.0.0.1:' + settings.Port);
+	});
+  });
 
 }).call(this);
