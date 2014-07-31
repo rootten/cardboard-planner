@@ -26,7 +26,9 @@
 			};
 
 			mongo.db.collection("projects").insert(document, function(error, records) {
-
+				if (error) {
+					throw error;
+				}
 			});
 
 
