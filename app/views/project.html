@@ -1,12 +1,21 @@
 
 
-<h1>{{viewModel.ProjectName}}</h1>
+<h1>{{ViewModel.ProjectName}}</h1>
+<span>{{ViewModel._Id}}</span>
+<span>{{ViewModel.Customer.name}}</span>
+<span>{{ViewModel.Customer.code}}</span>
+<span>{{ViewModel.Description}}</span>
 
-<div class="people">
+<div class="resources">
   <ul>
-    <li ng-repeat="p in people">
-      {{p.name}}
-      <p>{{p.customer}}</p>
+    <li ng-repeat="r in resources">
+    	<div class='singleResource'  >
+    		
+    		<h3>{{r.name}}</h3>
+    		<span>{{r.role}}</span>
+    		<span>{{r.startDate}}</span>
+    		<span>{{r.endDate}}</span>    
+    	</div>     
     </li>
   </ul>
 </div>

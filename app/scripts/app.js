@@ -15,7 +15,7 @@ angular
       })
       .when('/project/:id', {
         templateUrl: 'views/project.html',
-        controller: 'Projecttrl'
+        controller: 'ProjectCtrl'
       })    
       .otherwise({
         redirectTo: '/'
