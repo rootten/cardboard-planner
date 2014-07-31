@@ -4,8 +4,8 @@
 
 
  
-    return app.get('/project', function(req, res) {
-	  mongo.db.collection("projects").find({}, {name: 1, resources: 1}).toArray(function(err, projects){
+    return app.get('/project/:code', function(req, res) {
+	  mongo.db.collection("projects").findOne({"_id": req.params.code}, function(err, projects){
 		if(err){
 			throw err;
 		}
