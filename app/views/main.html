@@ -1,27 +1,26 @@
-<<<<<<< HEAD
-<div ng-repeat="project in projects">
-    <div class="panel panel-default">
-        <div class="panel-heading">{{project.name}}</div>
-        <div class="panel-body">
-            <div class="row">
-                <div ng-repeat="resources in project.resources" class="col-md-3">
-                    <img style="width:100px;" class="img-thumbnail"
-                         ng-src="https://my.infusion.com/User%20Photos/Profile%20Pictures/corp_{{resources.userId}}_LThumb.jpg">
-                    <span>{{resources.firstName}}</span>
-                    <span>{{resources.lastName}}</span>
+    <div ng-repeat="project in projects">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{project.name}}</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div ng-repeat="resources in project.resources" class="col-md-3">
+                        <img style="width:100px;" class="img-thumbnail"
+                             ng-src="https://my.infusion.com/User%20Photos/Profile%20Pictures/corp_{{resources.userId}}_LThumb.jpg">
+                        <span>{{resources.firstName}}</span>
+                        <span>{{resources.lastName}}</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-=======
 
-<div class="project">
-  <ul class="projects">
-    <li ng-repeat="p in projects">
-      {{p.name}}
-      <p>{{p.customer}}</p>
-    </li>
-  </ul>
-</div>
->>>>>>> 4beb29715aeab66b4592a3c76d11b4ddaf6b093c
+
+    <!--<div class="project">-->
+    <!--<ul class="projects">-->
+    <!--<li ng-repeat="p in projects">-->
+    <!--{{p.name}}-->
+    <!--<p>{{p.customer}}</p>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+
