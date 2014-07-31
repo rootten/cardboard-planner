@@ -4,7 +4,7 @@
 
 
 
-		return app.get('/createProjects', function(req, res) {
+		return app.get('/createProject', function(req, res) {
 
 			var document = {
 				name: "Mashreq",
