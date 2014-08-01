@@ -9,7 +9,7 @@
 //    ];
 //  });
 
-angular.module('cardboardPlannerApp')
+var app = angular.module('cardboardPlannerApp')
     .controller('MainCtrl', function ($scope, MainService) {
         debugger
          MainService.getProjects().success(function(projects){
@@ -52,29 +52,37 @@ angular.module('cardboardPlannerApp')
 //        ];
     });
 
-  app.service('userService', function () {
-      return {
-          getUser: function (login) {
-              return {
-                  _id: 'tciesiolka',
-                  email: 'tciesiolk@infusion.com',
-                  title: 'Consultant',
-                  firstName: 'Tomasz',
-                  lastName: 'Ciesiołka',
-                  techSkills: [
-                    'C#',
-                    'CRM'
-                  ],
-                  wantedSkills: [
-                    'AngularJS',
-                    'MongoDB'
-                  ]
-              };
-          }
-      };
-  });
+  //app.service('userService', function () {
+  //    return {
+  //        getUser: function (login) {
+  //            return {
+  //                _id: 'tciesiolka',
+  //                email: 'tciesiolk@infusion.com',
+  //                title: 'Consultant',
+  //                firstName: 'Tomasz',
+  //                lastName: 'Ciesiołka',
+  //                techSkills: [
+  //                  'C#',
+  //                  'CRM'
+  //                ],
+  //                wantedSkills: [
+  //                  'AngularJS',
+  //                  'MongoDB'
+  //                ]
+  //            };
+  //        }
+  //    };
+  //});
 
-  app.controller('UserController', ['userService', '$routeParams', function (userService, $routeParams) {
+  //app.controller('UserController', ['userService', '$routeParams', function (userService, $routeParams) {
+  //    console.log($routeParams.id);
+  //    this.userDetails = userService.getUser($routeParams.id);
+  //} ]);
+
+app.controller('UserController', ['UserService', '$routeParams', function (UserService, $routeParams) {
       console.log($routeParams.id);
-      this.userDetails = userService.getUser($routeParams.id);
+      var controller = this;
+      UserService.getUser($routeParams.id).success(function (user) {
+          controller.userDetails = user;
+      });
   } ]);
