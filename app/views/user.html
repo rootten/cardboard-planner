@@ -1,0 +1,24 @@
+<div ng-controller="UserController as userCtrl" class="user-details">
+    <p>
+        <img alt="{{userCtrl.userDetails.firstName + ' ' + userCtrl.userDetails.lastName}}" ng-src="{{'https://my.infusion.com/User%20Photos/Profile%20Pictures/corp_' + userCtrl.userDetails._id + '_LThumb.jpg'}}"
+    </p>
+    <p><span class="mlabel">Login:</span> {{userCtrl.userDetails._id}}</p>
+    <p><span class="mlabel">Email:</span> {{userCtrl.userDetails.email}}</p>
+    <p><span class="mlabel">Title:</span> {{userCtrl.userDetails.title}}</p>
+    <p><span class="mlabel">First name:</span> {{userCtrl.userDetails.firstName}}</p>
+    <p><span class="mlabel">Last name:</span> {{userCtrl.userDetails.lastName}}</p>
+    <p><span class="mlabel">Tech skills:</span>
+        <ul>
+            <li ng-repeat="techSkill in userCtrl.userDetails.techSkills">
+            {{techSkill}}
+            </li>
+        </ul>
+    </p>
+    <p><span class="mlabel">Wanted tech skills:</span>
+        <ul>
+            <li ng-repeat="wantedTechSkill in userCtrl.userDetails.wantedSkills">
+            {{wantedTechSkill}}
+            </li>
+        </ul>
+    </p>
+</div>

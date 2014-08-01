@@ -12,6 +12,9 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      }).when('/user/:id', {
+        templateUrl: 'views/user.html',
+        controller: 'UserController'
       })
       .when('/project/:id', {
         templateUrl: 'views/project.html',
