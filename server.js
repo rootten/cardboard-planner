@@ -1,20 +1,14 @@
 (function() {
-  var app, communicator, device, express, io, path, runningPortNumber, server, winston, settings;
-  settings = require("./settings");
-  express = require("express");
+  var settings = require("./settings");
+  var express = require("express");
   var mongo = require("./db");
-
-  app = express();
-
-
-  server = require("http").createServer(app);
+  var device = require("express-device");
+  var app = express();
 
 
-  device = require("express-device");
+  var server = require("http").createServer(app);
+  var path = require('path');
 
-  path = require('path');
-
-  runningPortNumber = process.env.PORT || 1234;
 
   app.configure(function() {
     app.use(express["static"](path.join(__dirname, '../app')));
@@ -24,12 +18,10 @@
   });
 
   app.use(function(req, res, next) {
-
     return next();
   });
 
   require('./routes')(app);
-
 
   mongo.init(function (error) {
     if (error)
