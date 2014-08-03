@@ -5,3 +5,4 @@ dist
 app/bower_components
 /.ntvs_analysis.dat
 /Cardboard.v12.suo
+/obj
