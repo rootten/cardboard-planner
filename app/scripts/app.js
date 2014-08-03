@@ -5,22 +5,26 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      }).when('/user/:id', {
-        templateUrl: 'views/user.html',
-        controller: 'UserController'
-      })
-      .when('/project/:id', {
-        templateUrl: 'views/project.html',
-        controller: 'ProjectCtrl'
-      })    
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  .config(function ($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+        .state('ProjectList', {
+            url: "",
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        })
+        .state('ProjectDetails', {
+            url: "/project/:id",
+            templateUrl: 'views/project.html',
+            controller: 'ProjectCtrl'
+        })
+        .state('UserDetails', {
+            url: "/user/:id",
+            templateUrl: 'views/user.html',
+            controller: 'UserController'
+        });
+});

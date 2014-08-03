@@ -23,6 +23,8 @@
     <Content Include="app\404.html" />
     <Content Include="app\index.html" />
     <Content Include="app\favicon.ico" />
+    <Compile Include="app\scripts\controllers\UserController.js" />
+    <Compile Include="app\scripts\services\UserService.js" />
     <Compile Include="db.js" />
     <Compile Include="server.js" />
     <Compile Include="settings.js" />
@@ -33,9 +35,9 @@
     <Content Include="app\views\main.html" />
     <Content Include="app\views\project.html" />
     <Content Include="app\views\user.html" />
-    <Compile Include="app\scripts\controllers\main.js" />
-    <Compile Include="app\scripts\controllers\project.js" />
-    <Compile Include="app\scripts\services\main_service.js" />
+    <Compile Include="app\scripts\controllers\MainController.js" />
+    <Compile Include="app\scripts\controllers\ProjectController.js" />
+    <Compile Include="app\scripts\services\MainService.js" />
     <Compile Include="routes\createProject.js" />
     <Compile Include="routes\createUser.js" />
     <Compile Include="routes\index.js" />
