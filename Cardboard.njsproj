@@ -24,6 +24,7 @@
     <Content Include="app\index.html" />
     <Content Include="app\favicon.ico" />
     <Compile Include="app\scripts\controllers\UserController.js" />
+    <Compile Include="app\scripts\services\ProjectService.js" />
     <Compile Include="app\scripts\services\UserService.js" />
     <Compile Include="db.js" />
     <Compile Include="server.js" />

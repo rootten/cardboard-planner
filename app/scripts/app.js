@@ -13,7 +13,7 @@ angular
 
     $stateProvider
         .state('ProjectList', {
-            url: "",
+            url: "/",
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         })

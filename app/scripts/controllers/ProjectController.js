@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('cardboardPlannerApp')
-  .controller('ProjectCtrl', ['$scope','$routeParams', 'projectService'] , function ($scope, $routeParams, projectService) {
+  .controller('ProjectCtrl', ['$scope', '$stateParams', 'ProjectService', function ($scope, $stateParams, ProjectService) {
     $scope["ViewModel"] = this;
-    this.resources = projectService.GetProjectData($routeParams.id);
+    this.resources = ProjectService.getProjectData($stateParams.id);
 
-});
+}]);
